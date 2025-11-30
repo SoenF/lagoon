@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LagoonLabs - Navigate in clear waters</title>
-    <meta name="description" content="LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments. We partner with large organizations to architect, deploy, and scale Moveworks agentic AI.">
+    <meta name="description"
+        content="LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments. We partner with large organizations to architect, deploy, and scale Moveworks agentic AI.">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
-            emailjs.init("XucASaJKpPvwkjb7i");
+        // EmailJS Configuration
+        const EMAILJS_PUBLIC_KEY = "XucASaJKpPvwkjb7i";
+        const EMAILJS_SERVICE_ID = "service_hfqq2h9";
+        const EMAILJS_TEMPLATE_ID = "template_gv4bgid";
+
+        (function () {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
         })();
     </script>
     <style>
@@ -36,20 +43,42 @@
         }
 
         /* Typography */
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--dark-text);
         }
 
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
-        h3 { font-size: 1.5rem; }
+        h1 {
+            font-size: 2.5rem;
+        }
 
-        p { margin-bottom: 1rem; }
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
 
         /* Buttons */
         .btn {
@@ -97,7 +126,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--primary-teal);
             display: flex;
@@ -106,7 +135,7 @@
         }
 
         .tagline {
-            font-size: 0.8rem;
+            font-size: 1rem;
             font-weight: 400;
             color: var(--dark-text);
         }
@@ -121,7 +150,8 @@
             font-weight: 500;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--primary-teal);
         }
 
@@ -151,7 +181,8 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1200px;
+            width: 90%;
             margin: 0 auto;
         }
 
@@ -269,7 +300,8 @@
             font-weight: 500;
         }
 
-        .form-group input, .form-group textarea {
+        .form-group input,
+        .form-group textarea {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ccc;
@@ -331,367 +363,397 @@
                 grid-template-columns: 1fr;
             }
 
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <div class="logo">
-            <span>LagoonLabs</span>
-            <span class="tagline">Navigate in clear waters</span>
-        </div>
-        <div class="mobile-menu-btn">☰</div>
-        <ul class="nav-links">
-            <li><a href="#services" data-key="nav_services">Services</a></li>
-            <li><a href="#about" data-key="nav_about">About</a></li>
-            <li><a href="#why-us" data-key="nav_why">Why Us</a></li>
-            <li><a href="#contact" data-key="nav_contact">Contact</a></li>
-            <li>
-                <div class="lang-toggle" id="langToggle">
-                    <span id="currentLangIcon">🇬🇧</span>
-                    <span id="currentLangText">EN</span>
-                </div>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-<section id="hero">
-    <div class="hero-content">
-        <h1 data-key="hero_title">LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments</h1>
-        <p data-key="hero_subtitle">We partner with large organizations to architect, deploy, and scale Moveworks agentic AI across complex enterprise environments. Our European-based team combines deep platform expertise, systems integration excellence, and a delivery model designed for predictable outcomes at scale.</p>
-        <div class="hero-buttons">
-            <a href="#contact" class="btn" data-key="hero_cta1">Speak with an Expert</a>
-            <a href="#services" class="btn btn-outline" data-key="hero_cta2">Our Enterprise Services</a>
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <div class="about-grid">
-        <div>
-            <h2 style="text-align: left;" data-key="about_heading">About LagoonLabs</h2>
-            <h3 data-key="about_subheading">Engineering-grade delivery. Enterprise-grade impact.</h3>
-            <br>
-            <p data-key="about_body">LagoonLabs is a specialized Moveworks consulting and delivery partner focused on accelerating AI adoption in enterprise environments. Our architects and engineers bring hands-on expertise from global transformation programs, allowing us to translate Moveworks' capabilities into measurable operational outcomes. We operate as an extension of your IT, HR, and Digital Workplace teams — bringing technical specialization, enterprise discipline, and delivery rigor.</p>
-        </div>
-        <div>
-            <ul class="about-list">
-                <li data-key="about_point1">Deep specialization in Moveworks architecture & deployment patterns</li>
-                <li data-key="about_point2">Strong engineering culture focused on reliability, integration, and scale</li>
-                <li data-key="about_point3">European consulting team aligned with CIO/CTO expectations</li>
-                <li data-key="about_point4">Proven ability to operationalize AI across regulated industries</li>
+    <header>
+        <nav>
+            <div class="logo">
+                <span>LagoonLabs</span>
+                <span class="tagline">Navigate in clear waters</span>
+            </div>
+            <div class="mobile-menu-btn">☰</div>
+            <ul class="nav-links">
+                <li><a href="#services" data-key="nav_services">Services</a></li>
+                <li><a href="#about" data-key="nav_about">About</a></li>
+                <li><a href="#why-us" data-key="nav_why">Why Us</a></li>
+                <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+                <li>
+                    <div class="lang-toggle" id="langToggle">
+                        <span id="currentLangIcon">🇬🇧</span>
+                        <span id="currentLangText">EN</span>
+                    </div>
+                </li>
             </ul>
-        </div>
-    </div>
-</section>
+        </nav>
+    </header>
 
-<section id="why-us">
-    <h2 data-key="why_heading">Why Leading Enterprises Choose LagoonLabs</h2>
-    <div class="cards-grid">
-        <div class="card">
-            <div class="card-icon">⚙️</div>
-            <h3 data-key="why_card1_title">Technical Authority on Moveworks</h3>
-            <p data-key="why_card1_desc">Engineering-level understanding of Moveworks agent capabilities, data pipelines, orchestration logic, workflow patterns, and integration best practices.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🔗</div>
-            <h3 data-key="why_card2_title">Enterprise Systems Integration Mastery</h3>
-            <p data-key="why_card2_desc">We integrate Moveworks across high-complexity systems (ServiceNow, Workday, Microsoft 365, SAP, Custom APIs & legacy systems) ensuring secure, robust, and scalable deployments.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">📊</div>
-            <h3 data-key="why_card3_title">Delivery Methodology Built for Enterprises</h3>
-            <p data-key="why_card3_desc">Early-stage architecture reviews, integration risk assessment, adoption frameworks, ROI modeling, structured governance & steering.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🇪🇺</div>
-            <h3 data-key="why_card4_title">Europe-based, High-touch Consulting Model</h3>
-            <p data-key="why_card4_desc">Timezone alignment, bilingual engineering teams, on-site capability for key phases, regulatory understanding (GDPR, data residency, ISO standards).</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">🚀</div>
-            <h3 data-key="why_card5_title">Accelerators That Reduce Time-to-Value</h3>
-            <p data-key="why_card5_desc">Prebuilt connectors, standardized service blueprints, employee-experience playbooks, automation coverage models. Accelerating deployments by 20–40%.</p>
-        </div>
-    </div>
-</section>
-
-<section id="services">
-    <h2 data-key="services_heading">Our Enterprise Services</h2>
-    <div class="cards-grid">
-        <div class="card">
-            <h3 data-key="service1_title">Implementation & Technical Integration</h3>
-            <p data-key="service1_desc">Reference architecture design, end-to-end integration with ITSM/HRIS/IAM/SaaS ecosystems, API orchestration, secure authentication, multi-domain & multi-region configuration.</p>
-        </div>
-        <div class="card">
-            <h3 data-key="service2_title">Engineering & Delivery Management</h3>
-            <p data-key="service2_desc">Structured delivery framework aligned with enterprise PMO, risk/dependency/compliance management, technical validation cycles, hypercare & long-term optimization.</p>
-        </div>
-        <div class="card">
-            <h3 data-key="service3_title">AI Optimization & Performance Engineering</h3>
-            <p data-key="service3_desc">Automation coverage assessments, data quality & governance strategies, conversational flow tuning, adoption analytics & KPI dashboards.</p>
-        </div>
-        <div class="card">
-            <h3 data-key="service4_title">Strategic Advisory & AI Enablement</h3>
-            <p data-key="service4_desc">AI maturity assessments, organizational readiness & change management, governance frameworks (GDPR, ISO, ITIL), industry benchmarking.</p>
-        </div>
-    </div>
-</section>
-
-<section id="value-prop">
-    <div class="cards-grid">
-        <div class="value-card" data-key="value1">"A deeply specialized Moveworks partner — not a generic AI integrator"</div>
-        <div class="value-card" data-key="value2">"Architectural precision, predictable execution"</div>
-        <div class="value-card" data-key="value3">"Accelerators & playbooks proven across industries"</div>
-        <div class="value-card" data-key="value4">"Business impact that resonates at CIO level"</div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="contact-container">
-        <h2 data-key="contact_heading">Evaluate your Moveworks deployment potential with our experts</h2>
-        <p data-key="contact_subheading">Get a structured assessment, integration roadmap, and ROI model — delivered within 48 hours.</p>
-        <form id="contact-form">
-            <div class="form-group">
-                <label for="name" data-key="label_name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+    <section id="hero">
+        <div class="hero-content">
+            <h1 data-key="hero_title">LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments</h1>
+            <p data-key="hero_subtitle">We partner with large organizations to architect, deploy, and scale Moveworks
+                agentic AI across complex enterprise environments. Our European-based team combines deep platform
+                expertise, systems integration excellence, and a delivery model designed for predictable outcomes at
+                scale.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn" data-key="hero_cta1">Speak with an Expert</a>
+                <a href="#services" class="btn btn-outline" data-key="hero_cta2">Our Enterprise Services</a>
             </div>
-            <div class="form-group">
-                <label for="company" data-key="label_company">Company</label>
-                <input type="text" id="company" name="company" required>
-            </div>
-            <div class="form-group">
-                <label for="email" data-key="label_email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone" data-key="label_phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="message" data-key="label_message">Message</label>
-                <textarea id="message" name="message"></textarea>
-            </div>
-            <button type="submit" class="btn" data-key="btn_submit">Schedule an Expert Session</button>
-        </form>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-content">
-        <div>
-            <span data-key="footer_copy">© 2025 LagoonLabs. All rights reserved.</span> | <span class="tagline">Navigate in clear waters</span>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script>
-    // Language Data
-    const translations = {
-        en: {
-            nav_services: "Services",
-            nav_about: "About",
-            nav_why: "Why Us",
-            nav_contact: "Contact",
-            hero_title: "LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments",
-            hero_subtitle: "We partner with large organizations to architect, deploy, and scale Moveworks agentic AI across complex enterprise environments. Our European-based team combines deep platform expertise, systems integration excellence, and a delivery model designed for predictable outcomes at scale.",
-            hero_cta1: "Speak with an Expert",
-            hero_cta2: "Our Enterprise Services",
-            about_heading: "About LagoonLabs",
-            about_subheading: "Engineering-grade delivery. Enterprise-grade impact.",
-            about_body: "LagoonLabs is a specialized Moveworks consulting and delivery partner focused on accelerating AI adoption in enterprise environments. Our architects and engineers bring hands-on expertise from global transformation programs, allowing us to translate Moveworks' capabilities into measurable operational outcomes. We operate as an extension of your IT, HR, and Digital Workplace teams — bringing technical specialization, enterprise discipline, and delivery rigor.",
-            about_point1: "Deep specialization in Moveworks architecture & deployment patterns",
-            about_point2: "Strong engineering culture focused on reliability, integration, and scale",
-            about_point3: "European consulting team aligned with CIO/CTO expectations",
-            about_point4: "Proven ability to operationalize AI across regulated industries",
-            why_heading: "Why Leading Enterprises Choose LagoonLabs",
-            why_card1_title: "Technical Authority on Moveworks",
-            why_card1_desc: "Engineering-level understanding of Moveworks agent capabilities, data pipelines, orchestration logic, workflow patterns, and integration best practices.",
-            why_card2_title: "Enterprise Systems Integration Mastery",
-            why_card2_desc: "We integrate Moveworks across high-complexity systems (ServiceNow, Workday, Microsoft 365, SAP, Custom APIs & legacy systems) ensuring secure, robust, and scalable deployments.",
-            why_card3_title: "Delivery Methodology Built for Enterprises",
-            why_card3_desc: "Early-stage architecture reviews, integration risk assessment, adoption frameworks, ROI modeling, structured governance & steering.",
-            why_card4_title: "Europe-based, High-touch Consulting Model",
-            why_card4_desc: "Timezone alignment, bilingual engineering teams, on-site capability for key phases, regulatory understanding (GDPR, data residency, ISO standards).",
-            why_card5_title: "Accelerators That Reduce Time-to-Value",
-            why_card5_desc: "Prebuilt connectors, standardized service blueprints, employee-experience playbooks, automation coverage models. Accelerating deployments by 20–40%.",
-            services_heading: "Our Enterprise Services",
-            service1_title: "Implementation & Technical Integration",
-            service1_desc: "Reference architecture design, end-to-end integration with ITSM/HRIS/IAM/SaaS ecosystems, API orchestration, secure authentication, multi-domain & multi-region configuration.",
-            service2_title: "Engineering & Delivery Management",
-            service2_desc: "Structured delivery framework aligned with enterprise PMO, risk/dependency/compliance management, technical validation cycles, hypercare & long-term optimization.",
-            service3_title: "AI Optimization & Performance Engineering",
-            service3_desc: "Automation coverage assessments, data quality & governance strategies, conversational flow tuning, adoption analytics & KPI dashboards.",
-            service4_title: "Strategic Advisory & AI Enablement",
-            service4_desc: "AI maturity assessments, organizational readiness & change management, governance frameworks (GDPR, ISO, ITIL), industry benchmarking.",
-            value1: "\"A deeply specialized Moveworks partner — not a generic AI integrator\"",
-            value2: "\"Architectural precision, predictable execution\"",
-            value3: "\"Accelerators & playbooks proven across industries\"",
-            value4: "\"Business impact that resonates at CIO level\"",
-            contact_heading: "Evaluate your Moveworks deployment potential with our experts",
-            contact_subheading: "Get a structured assessment, integration roadmap, and ROI model — delivered within 48 hours.",
-            label_name: "Full Name",
-            label_company: "Company",
-            label_email: "Email",
-            label_phone: "Phone",
-            label_message: "Message",
-            btn_submit: "Schedule an Expert Session",
-            footer_copy: "© 2025 LagoonLabs. All rights reserved."
-        },
-        fr: {
-            nav_services: "Services",
-            nav_about: "À propos",
-            nav_why: "Pourquoi nous",
-            nav_contact: "Contact",
-            hero_title: "LagoonLabs — Le spécialiste Moveworks pour les déploiements d'envergure en EMEA",
-            hero_subtitle: "Nous accompagnons les grandes entreprises dans l'architecture, l'intégration et la mise à l'échelle de Moveworks dans des environnements complexes. Notre équipe européenne associe expertise technique approfondie, excellence d'intégration et rigueur de delivery pour garantir des résultats prévisibles et mesurables.",
-            hero_cta1: "Parler à un expert",
-            hero_cta2: "Nos services enterprise",
-            about_heading: "À propos de LagoonLabs",
-            about_subheading: "Une ingénierie fiable. Un impact mesurable.",
-            about_body: "LagoonLabs est un cabinet spécialisé dans le déploiement Moveworks, dédié à l'accélération de l'IA agentique en environnement enterprise. Nos architectes et ingénieurs ont piloté des programmes de transformation complexes, avec une compréhension fine des contraintes CIO/CTO. Nous intervenons comme une extension de vos équipes IT, Digital Workplace et HR — avec une exigence d'exécution au niveau consulting haut de gamme.",
-            about_point1: "Expertise technique avancée Moveworks (architecture, intégration, optimisation)",
-            about_point2: "Culture engineering orientée fiabilité et scalabilité",
-            about_point3: "Équipe européenne maîtrisant les exigences réglementaires",
-            about_point4: "Expérience forte dans les environnements régulés (finance, santé, public)",
-            why_heading: "Pourquoi les grandes entreprises nous choisissent",
-            why_card1_title: "Expertise technique Moveworks au niveau engineering",
-            why_card1_desc: "Compréhension avancée : agentic behavior, pipelines de données, logiques d'orchestration, intégrations critiques.",
-            why_card2_title: "Maîtrise des intégrations enterprise complexes",
-            why_card2_desc: "Intégration Moveworks avec ServiceNow, Workday, Microsoft 365, SAP, systèmes legacy et API custom.",
-            why_card3_title: "Méthodologie de delivery inspirée du consulting de haut niveau",
-            why_card3_desc: "Revue d'architecture, analyse de risques d'intégration, frameworks d'adoption, modèles ROI, gouvernance & steering committees.",
-            why_card4_title: "Modèle de consulting européen haut de gamme",
-            why_card4_desc: "Alignement fuseau horaire, équipes bilingues, capacité d'intervention sur site, maîtrise RGPD, ISO, ITIL.",
-            why_card5_title: "Accélérateurs qui réduisent drastiquement les délais",
-            why_card5_desc: "Connecteurs préconfigurés, templates de services, playbooks d'adoption, modèles d'automatisation.",
-            services_heading: "Nos services entreprise",
-            service1_title: "Implémentation & Intégration Technique",
-            service1_desc: "Architecture Moveworks adaptée, intégration ITSM/HRIS/IAM/Cloud/SaaS/Legacy, sécurité, orchestration API, configuration multi-domaines.",
-            service2_title: "Delivery Management & Ingénierie",
-            service2_desc: "Cadre de delivery aligné PMO, gestion des risques & conformité, cycles de validation technique, hypercare, stabilisation, optimisation.",
-            service3_title: "Optimisation IA & Performance Engineering",
-            service3_desc: "Analyse couverture automatisation, stratégie Data & gouvernance, calibration agentique, dashboards EX & KPIs.",
-            service4_title: "Conseil Stratégique & Gouvernance IA",
-            service4_desc: "Évaluation de maturité IA, modèle opérationnel, cadres de gouvernance (RGPD, ISO, ITIL), benchmark EX.",
-            value1: "\"Un partenaire Moveworks hyper-spécialisé — pas un intégrateur IA généraliste\"",
-            value2: "\"Une précision architecturale, une exécution prévisible\"",
-            value3: "\"Des accélérateurs éprouvés pour aller plus vite et réduire les risques\"",
-            value4: "\"Un impact business tangible, lisible au niveau comité exécutif\"",
-            contact_heading: "Accélérez votre transformation Moveworks",
-            contact_subheading: "Recevez une évaluation technique, un roadmap d'intégration et un modèle ROI — en 48 heures.",
-            label_name: "Nom complet",
-            label_company: "Entreprise",
-            label_email: "Email",
-            label_phone: "Téléphone",
-            label_message: "Message",
-            btn_submit: "Planifier une session expert",
-            footer_copy: "© 2025 LagoonLabs. Tous droits réservés."
-        }
-    };
+    <section id="about">
+        <div class="about-grid">
+            <div>
+                <h2 style="text-align: left;" data-key="about_heading">About LagoonLabs</h2>
+                <h3 data-key="about_subheading">Engineering-grade delivery. Enterprise-grade impact.</h3>
+                <br>
+                <p data-key="about_body">LagoonLabs is a specialized Moveworks consulting and delivery partner focused
+                    on accelerating AI adoption in enterprise environments. Our architects and engineers bring hands-on
+                    expertise from global transformation programs, allowing us to translate Moveworks' capabilities into
+                    measurable operational outcomes. We operate as an extension of your IT, HR, and Digital Workplace
+                    teams — bringing technical specialization, enterprise discipline, and delivery rigor.</p>
+            </div>
+            <div>
+                <ul class="about-list">
+                    <li data-key="about_point1">Deep specialization in Moveworks architecture & deployment patterns</li>
+                    <li data-key="about_point2">Strong engineering culture focused on reliability, integration, and
+                        scale</li>
+                    <li data-key="about_point3">European consulting team aligned with CIO/CTO expectations</li>
+                    <li data-key="about_point4">Proven ability to operationalize AI across regulated industries</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    let currentLang = 'en';
+    <section id="why-us">
+        <h2 data-key="why_heading">Why Leading Enterprises Choose LagoonLabs</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h3 data-key="why_card1_title">Technical Authority on Moveworks</h3>
+                <p data-key="why_card1_desc">Engineering-level understanding of Moveworks agent capabilities, data
+                    pipelines, orchestration logic, workflow patterns, and integration best practices.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔗</div>
+                <h3 data-key="why_card2_title">Enterprise Systems Integration Mastery</h3>
+                <p data-key="why_card2_desc">We integrate Moveworks across high-complexity systems (ServiceNow, Workday,
+                    Microsoft 365, SAP, Custom APIs & legacy systems) ensuring secure, robust, and scalable deployments.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 data-key="why_card3_title">Delivery Methodology Built for Enterprises</h3>
+                <p data-key="why_card3_desc">Early-stage architecture reviews, integration risk assessment, adoption
+                    frameworks, ROI modeling, structured governance & steering.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🇪🇺</div>
+                <h3 data-key="why_card4_title">Europe-based, High-touch Consulting Model</h3>
+                <p data-key="why_card4_desc">Timezone alignment, bilingual engineering teams, on-site capability for key
+                    phases, regulatory understanding (GDPR, data residency, ISO standards).</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3 data-key="why_card5_title">Accelerators That Reduce Time-to-Value</h3>
+                <p data-key="why_card5_desc">Prebuilt connectors, standardized service blueprints, employee-experience
+                    playbooks, automation coverage models. Accelerating deployments by 20–40%.</p>
+            </div>
+        </div>
+    </section>
 
-    // Language Switcher Logic
-    const langToggle = document.getElementById('langToggle');
-    const currentLangIcon = document.getElementById('currentLangIcon');
-    const currentLangText = document.getElementById('currentLangText');
+    <section id="services">
+        <h2 data-key="services_heading">Our Enterprise Services</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3 data-key="service1_title">Implementation & Technical Integration</h3>
+                <p data-key="service1_desc">Reference architecture design, end-to-end integration with
+                    ITSM/HRIS/IAM/SaaS ecosystems, API orchestration, secure authentication, multi-domain & multi-region
+                    configuration.</p>
+            </div>
+            <div class="card">
+                <h3 data-key="service2_title">Engineering & Delivery Management</h3>
+                <p data-key="service2_desc">Structured delivery framework aligned with enterprise PMO,
+                    risk/dependency/compliance management, technical validation cycles, hypercare & long-term
+                    optimization.</p>
+            </div>
+            <div class="card">
+                <h3 data-key="service3_title">AI Optimization & Performance Engineering</h3>
+                <p data-key="service3_desc">Automation coverage assessments, data quality & governance strategies,
+                    conversational flow tuning, adoption analytics & KPI dashboards.</p>
+            </div>
+            <div class="card">
+                <h3 data-key="service4_title">Strategic Advisory & AI Enablement</h3>
+                <p data-key="service4_desc">AI maturity assessments, organizational readiness & change management,
+                    governance frameworks (GDPR, ISO, ITIL), industry benchmarking.</p>
+            </div>
+        </div>
+    </section>
 
-    langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'en' ? 'fr' : 'en';
-        updateContent();
-        updateToggleUI();
-    });
+    <section id="value-prop">
+        <div class="cards-grid">
+            <div class="value-card" data-key="value1">"A deeply specialized Moveworks partner — not a generic AI
+                integrator"</div>
+            <div class="value-card" data-key="value2">"Architectural precision, predictable execution"</div>
+            <div class="value-card" data-key="value3">"Accelerators & playbooks proven across industries"</div>
+            <div class="value-card" data-key="value4">"Business impact that resonates at CIO level"</div>
+        </div>
+    </section>
 
-    function updateToggleUI() {
-        if (currentLang === 'en') {
-            currentLangIcon.textContent = '🇬🇧';
-            currentLangText.textContent = 'EN';
-        } else {
-            currentLangIcon.textContent = '🇫🇷';
-            currentLangText.textContent = 'FR';
-        }
-    }
+    <section id="contact">
+        <div class="contact-container">
+            <h2 data-key="contact_heading">Evaluate your Moveworks deployment potential with our experts</h2>
+            <p data-key="contact_subheading">Get a structured assessment, integration roadmap, and ROI model — delivered
+                within 48 hours.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name" data-key="label_name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company" data-key="label_company">Company</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-key="label_email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-key="label_phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-key="label_message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit" class="btn" data-key="btn_submit">Schedule an Expert Session</button>
+            </form>
+        </div>
+    </section>
 
-    function updateContent() {
-        const elements = document.querySelectorAll('[data-key]');
-        elements.forEach(el => {
-            const key = el.getAttribute('data-key');
-            if (translations[currentLang][key]) {
-                // Fade out effect could be added here
-                el.textContent = translations[currentLang][key];
+    <footer>
+        <div class="footer-content">
+            <div>
+                <span data-key="footer_copy">© 2025 LagoonLabs. All rights reserved.</span> | <span
+                    class="tagline">Navigate in clear waters</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                nav_services: "Services",
+                nav_about: "About",
+                nav_why: "Why Us",
+                nav_contact: "Contact",
+                hero_title: "LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments",
+                hero_subtitle: "We partner with large organizations to architect, deploy, and scale Moveworks agentic AI across complex enterprise environments. Our European-based team combines deep platform expertise, systems integration excellence, and a delivery model designed for predictable outcomes at scale.",
+                hero_cta1: "Speak with an Expert",
+                hero_cta2: "Our Enterprise Services",
+                about_heading: "About LagoonLabs",
+                about_subheading: "Engineering-grade delivery. Enterprise-grade impact.",
+                about_body: "LagoonLabs is a specialized Moveworks consulting and delivery partner focused on accelerating AI adoption in enterprise environments. Our architects and engineers bring hands-on expertise from global transformation programs, allowing us to translate Moveworks' capabilities into measurable operational outcomes. We operate as an extension of your IT, HR, and Digital Workplace teams — bringing technical specialization, enterprise discipline, and delivery rigor.",
+                about_point1: "Deep specialization in Moveworks architecture & deployment patterns",
+                about_point2: "Strong engineering culture focused on reliability, integration, and scale",
+                about_point3: "European consulting team aligned with CIO/CTO expectations",
+                about_point4: "Proven ability to operationalize AI across regulated industries",
+                why_heading: "Why Leading Enterprises Choose LagoonLabs",
+                why_card1_title: "Technical Authority on Moveworks",
+                why_card1_desc: "Engineering-level understanding of Moveworks agent capabilities, data pipelines, orchestration logic, workflow patterns, and integration best practices.",
+                why_card2_title: "Enterprise Systems Integration Mastery",
+                why_card2_desc: "We integrate Moveworks across high-complexity systems (ServiceNow, Workday, Microsoft 365, SAP, Custom APIs & legacy systems) ensuring secure, robust, and scalable deployments.",
+                why_card3_title: "Delivery Methodology Built for Enterprises",
+                why_card3_desc: "Early-stage architecture reviews, integration risk assessment, adoption frameworks, ROI modeling, structured governance & steering.",
+                why_card4_title: "Europe-based, High-touch Consulting Model",
+                why_card4_desc: "Timezone alignment, bilingual engineering teams, on-site capability for key phases, regulatory understanding (GDPR, data residency, ISO standards).",
+                why_card5_title: "Accelerators That Reduce Time-to-Value",
+                why_card5_desc: "Prebuilt connectors, standardized service blueprints, employee-experience playbooks, automation coverage models. Accelerating deployments by 20–40%.",
+                services_heading: "Our Enterprise Services",
+                service1_title: "Implementation & Technical Integration",
+                service1_desc: "Reference architecture design, end-to-end integration with ITSM/HRIS/IAM/SaaS ecosystems, API orchestration, secure authentication, multi-domain & multi-region configuration.",
+                service2_title: "Engineering & Delivery Management",
+                service2_desc: "Structured delivery framework aligned with enterprise PMO, risk/dependency/compliance management, technical validation cycles, hypercare & long-term optimization.",
+                service3_title: "AI Optimization & Performance Engineering",
+                service3_desc: "Automation coverage assessments, data quality & governance strategies, conversational flow tuning, adoption analytics & KPI dashboards.",
+                service4_title: "Strategic Advisory & AI Enablement",
+                service4_desc: "AI maturity assessments, organizational readiness & change management, governance frameworks (GDPR, ISO, ITIL), industry benchmarking.",
+                value1: "\"A deeply specialized Moveworks partner — not a generic AI integrator\"",
+                value2: "\"Architectural precision, predictable execution\"",
+                value3: "\"Accelerators & playbooks proven across industries\"",
+                value4: "\"Business impact that resonates at CIO level\"",
+                contact_heading: "Evaluate your Moveworks deployment potential with our experts",
+                contact_subheading: "Get a structured assessment, integration roadmap, and ROI model — delivered within 48 hours.",
+                label_name: "Full Name",
+                label_company: "Company",
+                label_email: "Email",
+                label_phone: "Phone",
+                label_message: "Message",
+                btn_submit: "Schedule an Expert Session",
+                footer_copy: "© 2025 LagoonLabs. All rights reserved."
+            },
+            fr: {
+                nav_services: "Services",
+                nav_about: "À propos",
+                nav_why: "Pourquoi nous",
+                nav_contact: "Contact",
+                hero_title: "LagoonLabs — Le spécialiste Moveworks pour les déploiements d'envergure en EMEA",
+                hero_subtitle: "Nous accompagnons les grandes entreprises dans l'architecture, l'intégration et la mise à l'échelle de Moveworks dans des environnements complexes. Notre équipe européenne associe expertise technique approfondie, excellence d'intégration et rigueur de delivery pour garantir des résultats prévisibles et mesurables.",
+                hero_cta1: "Parler à un expert",
+                hero_cta2: "Nos services enterprise",
+                about_heading: "À propos de LagoonLabs",
+                about_subheading: "Une ingénierie fiable. Un impact mesurable.",
+                about_body: "LagoonLabs est un cabinet spécialisé dans le déploiement Moveworks, dédié à l'accélération de l'IA agentique en environnement enterprise. Nos architectes et ingénieurs ont piloté des programmes de transformation complexes, avec une compréhension fine des contraintes CIO/CTO. Nous intervenons comme une extension de vos équipes IT, Digital Workplace et HR — avec une exigence d'exécution au niveau consulting haut de gamme.",
+                about_point1: "Expertise technique avancée Moveworks (architecture, intégration, optimisation)",
+                about_point2: "Culture engineering orientée fiabilité et scalabilité",
+                about_point3: "Équipe européenne maîtrisant les exigences réglementaires",
+                about_point4: "Expérience forte dans les environnements régulés (finance, santé, public)",
+                why_heading: "Pourquoi les grandes entreprises nous choisissent",
+                why_card1_title: "Expertise technique Moveworks au niveau engineering",
+                why_card1_desc: "Compréhension avancée : agentic behavior, pipelines de données, logiques d'orchestration, intégrations critiques.",
+                why_card2_title: "Maîtrise des intégrations enterprise complexes",
+                why_card2_desc: "Intégration Moveworks avec ServiceNow, Workday, Microsoft 365, SAP, systèmes legacy et API custom.",
+                why_card3_title: "Méthodologie de delivery inspirée du consulting de haut niveau",
+                why_card3_desc: "Revue d'architecture, analyse de risques d'intégration, frameworks d'adoption, modèles ROI, gouvernance & steering committees.",
+                why_card4_title: "Modèle de consulting européen haut de gamme",
+                why_card4_desc: "Alignement fuseau horaire, équipes bilingues, capacité d'intervention sur site, maîtrise RGPD, ISO, ITIL.",
+                why_card5_title: "Accélérateurs qui réduisent drastiquement les délais",
+                why_card5_desc: "Connecteurs préconfigurés, templates de services, playbooks d'adoption, modèles d'automatisation.",
+                services_heading: "Nos services entreprise",
+                service1_title: "Implémentation & Intégration Technique",
+                service1_desc: "Architecture Moveworks adaptée, intégration ITSM/HRIS/IAM/Cloud/SaaS/Legacy, sécurité, orchestration API, configuration multi-domaines.",
+                service2_title: "Delivery Management & Ingénierie",
+                service2_desc: "Cadre de delivery aligné PMO, gestion des risques & conformité, cycles de validation technique, hypercare, stabilisation, optimisation.",
+                service3_title: "Optimisation IA & Performance Engineering",
+                service3_desc: "Analyse couverture automatisation, stratégie Data & gouvernance, calibration agentique, dashboards EX & KPIs.",
+                service4_title: "Conseil Stratégique & Gouvernance IA",
+                service4_desc: "Évaluation de maturité IA, modèle opérationnel, cadres de gouvernance (RGPD, ISO, ITIL), benchmark EX.",
+                value1: "\"Un partenaire Moveworks hyper-spécialisé — pas un intégrateur IA généraliste\"",
+                value2: "\"Une précision architecturale, une exécution prévisible\"",
+                value3: "\"Des accélérateurs éprouvés pour aller plus vite et réduire les risques\"",
+                value4: "\"Un impact business tangible, lisible au niveau comité exécutif\"",
+                contact_heading: "Accélérez votre transformation Moveworks",
+                contact_subheading: "Recevez une évaluation technique, un roadmap d'intégration et un modèle ROI — en 48 heures.",
+                label_name: "Nom complet",
+                label_company: "Entreprise",
+                label_email: "Email",
+                label_phone: "Téléphone",
+                label_message: "Message",
+                btn_submit: "Planifier une session expert",
+                footer_copy: "© 2025 LagoonLabs. Tous droits réservés."
             }
+        };
+
+        let currentLang = 'en';
+
+        // Language Switcher Logic
+        const langToggle = document.getElementById('langToggle');
+        const currentLangIcon = document.getElementById('currentLangIcon');
+        const currentLangText = document.getElementById('currentLangText');
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            updateContent();
+            updateToggleUI();
         });
-    }
 
-    // Mobile Menu
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+        function updateToggleUI() {
+            if (currentLang === 'en') {
+                currentLangIcon.textContent = '🇬🇧';
+                currentLangText.textContent = 'EN';
+            } else {
+                currentLangIcon.textContent = '🇫🇷';
+                currentLangText.textContent = 'FR';
+            }
+        }
 
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    });
-
-    // Contact Form
-    const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const btn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = btn.textContent;
-        btn.textContent = currentLang === 'en' ? 'Sending...' : 'Envoi en cours...';
-        btn.disabled = true;
-
-        emailjs.sendForm('service_hfqq2h9', 'template_gv4bgid', this)
-            .then(function() {
-                alert(currentLang === 'en' ? 'Message sent successfully!' : 'Message envoyé avec succès !');
-                contactForm.reset();
-            }, function(error) {
-                console.error('FAILED...', error);
-                alert(currentLang === 'en' ? 'Failed to send message. Please try again.' : 'Échec de l\'envoi. Veuillez réessayer.');
-            })
-            .finally(() => {
-                btn.textContent = originalBtnText;
-                btn.disabled = false;
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    // Fade out effect could be added here
+                    el.textContent = translations[currentLang][key];
+                }
             });
-    });
+        }
 
-    // Smooth Scroll for anchor links (native smooth scroll is enabled in CSS html { scroll-behavior: smooth; } but this ensures it works across browsers if needed or for offset)
-    // Adding offset for sticky header
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-    });
 
-</script>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = btn.textContent;
+            btn.textContent = currentLang === 'en' ? 'Sending...' : 'Envoi en cours...';
+            btn.disabled = true;
+
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                .then(function () {
+                    alert(currentLang === 'en' ? 'Message sent successfully!' : 'Message envoyé avec succès !');
+                    contactForm.reset();
+                }, function (error) {
+                    console.error('FAILED...', error);
+                    alert(currentLang === 'en' ? 'Failed to send message. Please try again.' : 'Échec de l\'envoi. Veuillez réessayer.');
+                })
+                .finally(() => {
+                    btn.textContent = originalBtnText;
+                    btn.disabled = false;
+                });
+        });
+
+        // Smooth Scroll for anchor links (native smooth scroll is enabled in CSS html { scroll-behavior: smooth; } but this ensures it works across browsers if needed or for offset)
+        // Adding offset for sticky header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+    </script>
 
 </body>
+
 </html>
