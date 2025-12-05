@@ -20,13 +20,20 @@
     </script>
     <style>
         :root {
+            /* Palette based on user preference but refined for modern look */
             --primary-teal: #008B8B;
-            --light-blue-bg: #E0F7FA;
-            --off-white: #F5F5F0;
-            --dark-text: #2C3E50;
-            --white: #FFFFFF;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary-dark: #006666;
+            --accent-blue: #E0F7FA;
+            --bg-light: #F8F9FA;
+            --bg-white: #FFFFFF;
+            --text-dark: #1A202C;
+            --text-gray: #4A5568;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s ease;
+            --container-width: 1200px;
         }
 
         * {
@@ -36,9 +43,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-text);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text-dark);
             line-height: 1.6;
+            background-color: var(--bg-white);
             overflow-x: hidden;
         }
 
@@ -47,27 +55,33 @@
         h2,
         h3,
         h4 {
+            color: var(--text-dark);
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
+            line-height: 1.2;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
         }
 
         h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.125rem;
         }
 
         a {
@@ -80,43 +94,83 @@
             list-style: none;
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--primary-teal);
-            color: var(--white);
-            border-radius: 5px;
-            font-weight: 600;
-            border: 2px solid var(--primary-teal);
-            cursor: pointer;
-            transition: var(--transition);
+        /* Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary-teal);
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .bg-white {
+            background-color: var(--bg-white);
+        }
+
+        .bg-accent {
+            background-color: var(--accent-blue);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            /* Pill shape */
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-teal);
+            color: var(--bg-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
         .btn-outline {
             background-color: transparent;
             color: var(--primary-teal);
-            border: 2px solid var(--primary-teal);
+            border-color: var(--primary-teal);
         }
 
         .btn-outline:hover {
             background-color: var(--primary-teal);
-            color: var(--white);
+            color: var(--bg-white);
         }
 
         /* Header */
         header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
         }
 
         nav {
@@ -126,33 +180,39 @@
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary-teal);
             display: flex;
             flex-direction: column;
-            line-height: 1.2;
+            line-height: 1;
         }
 
-        .tagline {
-            font-size: 1rem;
+        .logo span:last-child {
+            font-size: 0.75rem;
+            color: var(--text-gray);
             font-weight: 400;
-            color: var(--dark-text);
+            margin-top: 4px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .nav-links a {
             font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-dark);
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-links a:hover {
             color: var(--primary-teal);
+        }
+
+        .nav-cta {
+            margin-left: 1.5rem;
         }
 
         .lang-toggle {
@@ -161,173 +221,267 @@
             align-items: center;
             gap: 0.5rem;
             font-weight: 600;
-            border: 1px solid #ccc;
-            padding: 0.3rem 0.6rem;
+            padding: 0.5rem;
             border-radius: 4px;
+            transition: var(--transition);
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 5%;
+        .lang-toggle:hover {
+            background-color: var(--bg-light);
         }
 
-        /* Hero */
+        /* Hero Section */
         #hero {
-            background-color: var(--light-blue-bg);
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
+            padding: 8rem 0 6rem;
+            background: linear-gradient(180deg, var(--bg-white) 0%, var(--accent-blue) 100%);
             text-align: center;
         }
 
         .hero-content {
-            max-width: 1200px;
-            width: 90%;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero-buttons {
-            margin-top: 2rem;
             display: flex;
             gap: 1rem;
             justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        /* Trust Bar / Stats */
+        .trust-bar {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
             flex-wrap: wrap;
         }
 
-        /* About */
-        #about {
-            background-color: var(--off-white);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+        .trust-item {
+            display: flex;
             align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--text-gray);
         }
 
-        .about-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-list li::before {
-            content: "•";
+        .trust-icon {
             color: var(--primary-teal);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+            font-size: 1.25rem;
         }
 
-        /* Why Us */
-        #why-us {
-            background-color: var(--light-blue-bg);
+        /* About Section */
+        #about {
+            background-color: var(--bg-white);
         }
 
-        .cards-grid {
+        .about-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .about-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-light);
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-color);
+        }
+
+        .feature-icon {
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Why Us Section */
+        #why-us {
+            background-color: var(--bg-light);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
         .card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
             transition: var(--transition);
-            height: 100%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-teal);
         }
 
         .card-icon {
-            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             color: var(--primary-teal);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Services */
+        /* Services Section */
         #services {
-            background-color: var(--off-white);
+            background-color: var(--bg-white);
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-left: 4px solid var(--primary-teal);
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
         }
 
         /* Value Prop */
         #value-prop {
-            background-color: var(--light-blue-bg);
+            background-color: var(--primary-teal);
+            color: var(--bg-white);
+            text-align: center;
         }
 
-        .value-card {
-            text-align: center;
-            background: var(--white);
+        #value-prop h2 {
+            color: var(--bg-white);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            font-weight: 600;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
             font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 150px;
         }
 
-        /* Contact */
+        /* Contact Section */
         #contact {
-            background-color: var(--off-white);
-            text-align: center;
+            background-color: var(--bg-light);
+            position: relative;
         }
 
-        .contact-container {
-            max-width: 600px;
+        .contact-wrapper {
+            max-width: 700px;
             margin: 0 auto;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
+            background: var(--bg-white);
+            padding: 4rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
-            text-align: left;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--bg-light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            background-color: var(--bg-white);
+            box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.1);
         }
 
         .form-group textarea {
+            min-height: 150px;
             resize: vertical;
-            min-height: 120px;
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-text);
-            color: var(--white);
-            padding: 2rem 5%;
-            text-align: center;
+            background-color: #0F172A;
+            color: #94A3B8;
+            padding: 4rem 0 2rem;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #1E293B;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--bg-white);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--bg-white);
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.875rem;
         }
 
         /* Mobile Nav */
@@ -335,10 +489,19 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--text-dark);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
             .mobile-menu-btn {
                 display: block;
             }
@@ -349,26 +512,33 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: var(--white);
+                background: var(--bg-white);
                 flex-direction: column;
-                padding: 1rem;
-                box-shadow: var(--shadow);
+                padding: 2rem;
+                box-shadow: var(--shadow-lg);
+                gap: 1.5rem;
             }
 
             .nav-links.active {
                 display: flex;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
+            .nav-cta {
+                margin: 0;
             }
 
-            h1 {
-                font-size: 2rem;
+            .trust-bar {
+                gap: 2rem;
             }
 
-            h2 {
-                font-size: 1.5rem;
+            .contact-wrapper {
+                padding: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
             }
         }
     </style>
@@ -377,176 +547,230 @@
 <body>
 
     <header>
-        <nav>
-            <div class="logo">
-                <span>LagoonLabs</span>
-                <span class="tagline">Navigate in clear waters</span>
-            </div>
-            <div class="mobile-menu-btn">☰</div>
-            <ul class="nav-links">
-                <li><a href="#services" data-key="nav_services">Services</a></li>
-                <li><a href="#about" data-key="nav_about">About</a></li>
-                <li><a href="#why-us" data-key="nav_why">Why Us</a></li>
-                <li><a href="#contact" data-key="nav_contact">Contact</a></li>
-                <li>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span>LagoonLabs</span>
+                    <span class="tagline">Navigate in clear waters</span>
+                </div>
+                <div class="mobile-menu-btn">☰</div>
+                <div class="nav-links">
+                    <a href="#services" data-key="nav_services">Services</a>
+                    <a href="#about" data-key="nav_about">About</a>
+                    <a href="#why-us" data-key="nav_why">Why Us</a>
                     <div class="lang-toggle" id="langToggle">
                         <span id="currentLangIcon">🇬🇧</span>
                         <span id="currentLangText">EN</span>
                     </div>
-                </li>
-            </ul>
-        </nav>
+                    <a href="#contact" class="btn btn-primary nav-cta" data-key="nav_contact">Contact Us</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <section id="hero">
-        <div class="hero-content">
+        <div class="container hero-content">
             <h1 data-key="hero_title">LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments</h1>
             <p data-key="hero_subtitle">We partner with large organizations to architect, deploy, and scale Moveworks
                 agentic AI across complex enterprise environments. Our European-based team combines deep platform
                 expertise, systems integration excellence, and a delivery model designed for predictable outcomes at
                 scale.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn" data-key="hero_cta1">Speak with an Expert</a>
+                <a href="#contact" class="btn btn-primary" data-key="hero_cta1">Speak with an Expert</a>
                 <a href="#services" class="btn btn-outline" data-key="hero_cta2">Our Enterprise Services</a>
+            </div>
+
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <span data-key="trust1">EMEA Specialist</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <span data-key="trust2">Engineering Culture</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✓</span>
+                    <span data-key="trust3">Enterprise Scale</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about">
-        <div class="about-grid">
-            <div>
-                <h2 style="text-align: left;" data-key="about_heading">About LagoonLabs</h2>
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-intro">
+                <h2 data-key="about_heading">About LagoonLabs</h2>
                 <h3 data-key="about_subheading">Engineering-grade delivery. Enterprise-grade impact.</h3>
-                <br>
                 <p data-key="about_body">LagoonLabs is a specialized Moveworks consulting and delivery partner focused
                     on accelerating AI adoption in enterprise environments. Our architects and engineers bring hands-on
                     expertise from global transformation programs, allowing us to translate Moveworks' capabilities into
-                    measurable operational outcomes. We operate as an extension of your IT, HR, and Digital Workplace
-                    teams — bringing technical specialization, enterprise discipline, and delivery rigor.</p>
+                    measurable operational outcomes.</p>
             </div>
-            <div>
-                <ul class="about-list">
-                    <li data-key="about_point1">Deep specialization in Moveworks architecture & deployment patterns</li>
-                    <li data-key="about_point2">Strong engineering culture focused on reliability, integration, and
-                        scale</li>
-                    <li data-key="about_point3">European consulting team aligned with CIO/CTO expectations</li>
-                    <li data-key="about_point4">Proven ability to operationalize AI across regulated industries</li>
-                </ul>
+
+            <div class="about-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <p data-key="about_point1">Deep specialization in Moveworks architecture & deployment patterns</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <p data-key="about_point2">Strong engineering culture focused on reliability, integration, and scale
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🇪🇺</div>
+                    <p data-key="about_point3">European consulting team aligned with CIO/CTO expectations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <p data-key="about_point4">Proven ability to operationalize AI across regulated industries</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="why-us">
-        <h2 data-key="why_heading">Why Leading Enterprises Choose LagoonLabs</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <div class="card-icon">⚙️</div>
-                <h3 data-key="why_card1_title">Technical Authority on Moveworks</h3>
-                <p data-key="why_card1_desc">Engineering-level understanding of Moveworks agent capabilities, data
-                    pipelines, orchestration logic, workflow patterns, and integration best practices.</p>
+    <section id="why-us" class="section-padding">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 data-key="why_heading">Why Leading Enterprises Choose LagoonLabs</h2>
             </div>
-            <div class="card">
-                <div class="card-icon">🔗</div>
-                <h3 data-key="why_card2_title">Enterprise Systems Integration Mastery</h3>
-                <p data-key="why_card2_desc">We integrate Moveworks across high-complexity systems (ServiceNow, Workday,
-                    Microsoft 365, SAP, Custom APIs & legacy systems) ensuring secure, robust, and scalable deployments.
-                </p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3 data-key="why_card3_title">Delivery Methodology Built for Enterprises</h3>
-                <p data-key="why_card3_desc">Early-stage architecture reviews, integration risk assessment, adoption
-                    frameworks, ROI modeling, structured governance & steering.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🇪🇺</div>
-                <h3 data-key="why_card4_title">Europe-based, High-touch Consulting Model</h3>
-                <p data-key="why_card4_desc">Timezone alignment, bilingual engineering teams, on-site capability for key
-                    phases, regulatory understanding (GDPR, data residency, ISO standards).</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🚀</div>
-                <h3 data-key="why_card5_title">Accelerators That Reduce Time-to-Value</h3>
-                <p data-key="why_card5_desc">Prebuilt connectors, standardized service blueprints, employee-experience
-                    playbooks, automation coverage models. Accelerating deployments by 20–40%.</p>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3 data-key="why_card1_title">Technical Authority on Moveworks</h3>
+                    <p data-key="why_card1_desc">Engineering-level understanding of Moveworks agent capabilities, data
+                        pipelines, orchestration logic, workflow patterns, and integration best practices.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔗</div>
+                    <h3 data-key="why_card2_title">Enterprise Systems Integration Mastery</h3>
+                    <p data-key="why_card2_desc">We integrate Moveworks across high-complexity systems (ServiceNow,
+                        Workday,
+                        Microsoft 365, SAP, Custom APIs & legacy systems) ensuring secure, robust, and scalable
+                        deployments.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3 data-key="why_card3_title">Delivery Methodology Built for Enterprises</h3>
+                    <p data-key="why_card3_desc">Early-stage architecture reviews, integration risk assessment, adoption
+                        frameworks, ROI modeling, structured governance & steering.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🇪🇺</div>
+                    <h3 data-key="why_card4_title">Europe-based, High-touch Consulting Model</h3>
+                    <p data-key="why_card4_desc">Timezone alignment, bilingual engineering teams, on-site capability for
+                        key
+                        phases, regulatory understanding (GDPR, data residency, ISO standards).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3 data-key="why_card5_title">Accelerators That Reduce Time-to-Value</h3>
+                    <p data-key="why_card5_desc">Prebuilt connectors, standardized service blueprints,
+                        employee-experience
+                        playbooks, automation coverage models. Accelerating deployments by 20–40%.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="services">
-        <h2 data-key="services_heading">Our Enterprise Services</h2>
-        <div class="cards-grid">
-            <div class="card">
-                <h3 data-key="service1_title">Implementation & Technical Integration</h3>
-                <p data-key="service1_desc">Reference architecture design, end-to-end integration with
-                    ITSM/HRIS/IAM/SaaS ecosystems, API orchestration, secure authentication, multi-domain & multi-region
-                    configuration.</p>
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 data-key="services_heading">Our Enterprise Services</h2>
             </div>
-            <div class="card">
-                <h3 data-key="service2_title">Engineering & Delivery Management</h3>
-                <p data-key="service2_desc">Structured delivery framework aligned with enterprise PMO,
-                    risk/dependency/compliance management, technical validation cycles, hypercare & long-term
-                    optimization.</p>
-            </div>
-            <div class="card">
-                <h3 data-key="service3_title">AI Optimization & Performance Engineering</h3>
-                <p data-key="service3_desc">Automation coverage assessments, data quality & governance strategies,
-                    conversational flow tuning, adoption analytics & KPI dashboards.</p>
-            </div>
-            <div class="card">
-                <h3 data-key="service4_title">Strategic Advisory & AI Enablement</h3>
-                <p data-key="service4_desc">AI maturity assessments, organizational readiness & change management,
-                    governance frameworks (GDPR, ISO, ITIL), industry benchmarking.</p>
+            <div class="grid-3">
+                <div class="service-card">
+                    <h3 data-key="service1_title">Implementation & Technical Integration</h3>
+                    <p data-key="service1_desc">Reference architecture design, end-to-end integration with
+                        ITSM/HRIS/IAM/SaaS ecosystems, API orchestration, secure authentication, multi-domain &
+                        multi-region
+                        configuration.</p>
+                </div>
+                <div class="service-card">
+                    <h3 data-key="service2_title">Engineering & Delivery Management</h3>
+                    <p data-key="service2_desc">Structured delivery framework aligned with enterprise PMO,
+                        risk/dependency/compliance management, technical validation cycles, hypercare & long-term
+                        optimization.</p>
+                </div>
+                <div class="service-card">
+                    <h3 data-key="service3_title">AI Optimization & Performance Engineering</h3>
+                    <p data-key="service3_desc">Automation coverage assessments, data quality & governance strategies,
+                        conversational flow tuning, adoption analytics & KPI dashboards.</p>
+                </div>
+                <div class="service-card">
+                    <h3 data-key="service4_title">Strategic Advisory & AI Enablement</h3>
+                    <p data-key="service4_desc">AI maturity assessments, organizational readiness & change management,
+                        governance frameworks (GDPR, ISO, ITIL), industry benchmarking.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="value-prop">
-        <div class="cards-grid">
-            <div class="value-card" data-key="value1">"A deeply specialized Moveworks partner — not a generic AI
-                integrator"</div>
-            <div class="value-card" data-key="value2">"Architectural precision, predictable execution"</div>
-            <div class="value-card" data-key="value3">"Accelerators & playbooks proven across industries"</div>
-            <div class="value-card" data-key="value4">"Business impact that resonates at CIO level"</div>
+    <section id="value-prop" class="section-padding">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-item" data-key="value1">"A deeply specialized Moveworks partner — not a generic AI
+                    integrator"</div>
+                <div class="value-item" data-key="value2">"Architectural precision, predictable execution"</div>
+                <div class="value-item" data-key="value3">"Accelerators & playbooks proven across industries"</div>
+                <div class="value-item" data-key="value4">"Business impact that resonates at CIO level"</div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="contact-container">
-            <h2 data-key="contact_heading">Evaluate your Moveworks deployment potential with our experts</h2>
-            <p data-key="contact_subheading">Get a structured assessment, integration roadmap, and ROI model — delivered
-                within 48 hours.</p>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name" data-key="label_name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="text-center" style="margin-bottom: 2rem;">
+                    <h2 data-key="contact_heading">Evaluate your Moveworks deployment potential</h2>
+                    <p data-key="contact_subheading">Get a structured assessment, integration roadmap, and ROI model —
+                        delivered
+                        within 48 hours.</p>
                 </div>
-                <div class="form-group">
-                    <label for="company" data-key="label_company">Company</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" data-key="label_email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone" data-key="label_phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="message" data-key="label_message">Message</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-                <button type="submit" class="btn" data-key="btn_submit">Schedule an Expert Session</button>
-            </form>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-key="label_name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company" data-key="label_company">Company</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-key="label_email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-key="label_phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-key="label_message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;"
+                            data-key="btn_submit">Schedule an Expert Session</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div>
-                <span data-key="footer_copy">© 2025 LagoonLabs. All rights reserved.</span> | <span
-                    class="tagline">Navigate in clear waters</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">LagoonLabs</div>
+                <div class="footer-links">
+                    <a href="#services" data-key="nav_services">Services</a>
+                    <a href="#about" data-key="nav_about">About</a>
+                    <a href="#contact" data-key="nav_contact">Contact</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <span data-key="footer_copy">© 2025 LagoonLabs. All rights reserved.</span>
             </div>
         </div>
     </footer>
@@ -558,11 +782,14 @@
                 nav_services: "Services",
                 nav_about: "About",
                 nav_why: "Why Us",
-                nav_contact: "Contact",
+                nav_contact: "Contact Us",
                 hero_title: "LagoonLabs — The EMEA Specialist for Moveworks Enterprise Deployments",
                 hero_subtitle: "We partner with large organizations to architect, deploy, and scale Moveworks agentic AI across complex enterprise environments. Our European-based team combines deep platform expertise, systems integration excellence, and a delivery model designed for predictable outcomes at scale.",
                 hero_cta1: "Speak with an Expert",
                 hero_cta2: "Our Enterprise Services",
+                trust1: "EMEA Specialist",
+                trust2: "Engineering Culture",
+                trust3: "Enterprise Scale",
                 about_heading: "About LagoonLabs",
                 about_subheading: "Engineering-grade delivery. Enterprise-grade impact.",
                 about_body: "LagoonLabs is a specialized Moveworks consulting and delivery partner focused on accelerating AI adoption in enterprise environments. Our architects and engineers bring hands-on expertise from global transformation programs, allowing us to translate Moveworks' capabilities into measurable operational outcomes. We operate as an extension of your IT, HR, and Digital Workplace teams — bringing technical specialization, enterprise discipline, and delivery rigor.",
@@ -594,7 +821,7 @@
                 value2: "\"Architectural precision, predictable execution\"",
                 value3: "\"Accelerators & playbooks proven across industries\"",
                 value4: "\"Business impact that resonates at CIO level\"",
-                contact_heading: "Evaluate your Moveworks deployment potential with our experts",
+                contact_heading: "Evaluate your Moveworks deployment potential",
                 contact_subheading: "Get a structured assessment, integration roadmap, and ROI model — delivered within 48 hours.",
                 label_name: "Full Name",
                 label_company: "Company",
@@ -608,11 +835,14 @@
                 nav_services: "Services",
                 nav_about: "À propos",
                 nav_why: "Pourquoi nous",
-                nav_contact: "Contact",
+                nav_contact: "Contactez-nous",
                 hero_title: "LagoonLabs — Le spécialiste Moveworks pour les déploiements d'envergure en EMEA",
                 hero_subtitle: "Nous accompagnons les grandes entreprises dans l'architecture, l'intégration et la mise à l'échelle de Moveworks dans des environnements complexes. Notre équipe européenne associe expertise technique approfondie, excellence d'intégration et rigueur de delivery pour garantir des résultats prévisibles et mesurables.",
                 hero_cta1: "Parler à un expert",
                 hero_cta2: "Nos services enterprise",
+                trust1: "Spécialiste EMEA",
+                trust2: "Culture Engineering",
+                trust3: "Échelle Enterprise",
                 about_heading: "À propos de LagoonLabs",
                 about_subheading: "Une ingénierie fiable. Un impact mesurable.",
                 about_body: "LagoonLabs est un cabinet spécialisé dans le déploiement Moveworks, dédié à l'accélération de l'IA agentique en environnement enterprise. Nos architectes et ingénieurs ont piloté des programmes de transformation complexes, avec une compréhension fine des contraintes CIO/CTO. Nous intervenons comme une extension de vos équipes IT, Digital Workplace et HR — avec une exigence d'exécution au niveau consulting haut de gamme.",
@@ -684,7 +914,6 @@
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
                 if (translations[currentLang][key]) {
-                    // Fade out effect could be added here
                     el.textContent = translations[currentLang][key];
                 }
             });
@@ -730,8 +959,7 @@
                 });
         });
 
-        // Smooth Scroll for anchor links (native smooth scroll is enabled in CSS html { scroll-behavior: smooth; } but this ensures it works across browsers if needed or for offset)
-        // Adding offset for sticky header
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
